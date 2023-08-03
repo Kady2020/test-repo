@@ -1,0 +1,42 @@
+/*==================== RESET STYLES ====================*/
+@import 'import/reset.scss';
+
+/*==================== FONTS ====================*/
+@import 'fonts.scss';
+
+// @import url(''); // &subset=cyrillic-ext
+
+// @font-face {
+//   font-family: 'Train One';
+//   src: url('../../fonts') format('woff2'), url('../../fonts') format('woff');
+//   font-weight: 400;
+//   font-style: normal;
+//   font-display: swap;
+// }
+
+/*==================== VARIABLES ====================*/
+@import 'import/variables.scss';
+
+/*==================== MIXINS ====================*/
+@import 'import/mixins.scss';
+
+/*==================== BASIC PARAMETERS ====================*/
+@import 'import/basic-parameters.scss';
+
+/*==================== REPEAT BLOCK ====================*/
+@import 'import/repeat-blocks.scss';
+
+/*==================== CUSTOM SELECT ====================*/
+// @import 'import/custom-select.scss';
+
+/*==================== CHECKBOX ====================*/
+// @import 'import/checkbox.scss';
+
+/*==================== RADIO BUTTON ====================*/
+// @import 'import/radio-button.scss';
+
+/*==================== SPOILER ====================*/
+// @import 'import/spoiler.scss';
+
+/*==================== HEADER ====================*/
+@import 'import/header.scss';
