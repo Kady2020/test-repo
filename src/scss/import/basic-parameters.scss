@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: $popFont;
+  font-family: $montFont;
   font-weight: 400;
   background: #333;
   color: #fff;
@@ -24,32 +24,4 @@ body {
 
 .main {
   flex: 1 1 auto;
-  padding: 150px 15px 0 15px;
-
-
-
-  &:not(:last-child) {
-    @include respValue('margin-bottom', 40, 20, 1);
-  }
-
-  @media (min-width: 846.98px) {
-    display: grid;
-    grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1170px) 1fr;
-  }
-
-  @media (max-width: 991.98px) {
-    padding: 120px 15px 0 15px;
-  }
-
-  &_secondpage {
-    grid-template: 1fr / 1fr;
-    padding: 0;
-  }
-
-  // &__intro,
-  // &__video-gallery {
-  //   &:not(:last-child) {
-  //     margin: 0 0 60px 0;
-  //   }
-  // }
 }
