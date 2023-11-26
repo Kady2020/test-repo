@@ -3,10 +3,14 @@
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 50;
+  z-index: 100;
 
+  grid-area: header;
+  display: grid;
+  grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1170px) 1fr;
+  align-items: center;
   background: $terraFls;
-  padding: 7.5px 0;
+  padding: 7.5px 15px;
 
   &::before {
     content: '';
@@ -16,7 +20,7 @@
     top: -100%;
     left: 0;
     z-index: 2;
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
   }
 
   &.scroll {
@@ -35,34 +39,40 @@
     }
   }
 
-  &__container {
-    display: grid;
-    grid-template-rows: minmax(90px, auto);
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 50px;
+  &__logo {
+    grid-column: 2 / 3;
+
+    position: relative;
+    z-index: 3;
+  }
+
+  &__menu {
+    @media (min-width: 991.98px) {
+      grid-column: 3 / 4;
+    }
+  }
+
+  &__actions {
+    display: none;
 
     @media (max-width: 991.98px) {
-      grid-template-rows: minmax(70px, auto);
-      gap: 15px;
+      grid-column: 3 / 4;
+      display: grid;
+      grid-auto-flow: column;
+      align-items: center;
+      justify-self: end;
+      column-gap: 20px;
     }
   }
 
-  &__menu,
   &__btns {
-    justify-self: end;
+    .btn {
+      position: relative;
+      z-index: 3;
+    }
   }
 
-  &__btns {
-    @media (max-width: 376.98px) {
-      justify-self: center;
-
-      .btn {
-        padding: 8px 16px;
-        border-radius: 15px;
-        letter-spacing: 0.2px;
-      }
-    }
+  &__burger {
   }
 }
 
@@ -75,16 +85,15 @@
     left: 0;
     padding: 150px 15px 30px 15px;
     background: $yelloColor;
-    visibility: hidden;
     overflow: auto;
-    transition: all .2s ease-in;
+    visibility: hidden;
+    transition: all 0.1s ease-in;
 
     &.active {
       top: 0;
       visibility: visible;
     }
   }
-
   &__list {
     display: grid;
     row-gap: 15px;
@@ -92,12 +101,17 @@
 
     @media (min-width: 991.98px) {
       grid-auto-flow: column;
-      column-gap: 30px;
+      align-items: center;
+      justify-items: end;
+      column-gap: 20px;
       text-align: left;
     }
   }
 
   &__link {
+    position: relative;
+    z-index: 3;
+
     @media (max-width: 991.98px) {
       font-weight: 500;
       color: #333;

@@ -35,15 +35,10 @@
   padding: 16px 32px;
   border-radius: 30px;
   overflow: hidden;
-  cursor: pointer;
-
-  letter-spacing: 1px;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s ease-in;
   color: #fff;
-  transition: all 0.2s linear;
-
-  position: relative;
-  z-index: 3;
 
   &_blue {
     background: $blueColor;
@@ -54,9 +49,8 @@
   }
 
   &_yellow {
-    font-weight: 500;
-    border: 1px solid #fff;
     background: #333;
+    border: 1px solid #fff;
   }
 
   @media (max-width: 991.98px) {
@@ -78,8 +72,9 @@
 
     &_yellow {
       &:hover {
-        border: 1px solid transparent;
+        font-weight: 500;
         background: $yelloColor;
+        border: 1px solid transparent;
         color: #333;
       }
     }
@@ -89,22 +84,19 @@
 //! Links
 .link {
   display: block;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 2;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #fff;
   position: relative;
-  z-index: 3;
 
   @media (min-width: 991.98px) {
     display: inline-block;
     font-size: 18px;
     line-height: 1.4;
     letter-spacing: 0.8px;
-  }
 
-  @media (min-width: 991.98px) {
     &::before {
       content: '';
       position: absolute;
@@ -112,10 +104,10 @@
       height: 2px;
       bottom: -4px;
       left: 0;
-      display: inline-block;
       background: #fff;
       transform: scale(0);
-      transition: all 0.2s linear;
+      transform-origin: left;
+      transition: all 0.2s ease-in;
     }
 
     &:hover {
@@ -133,9 +125,6 @@
   height: 80px;
   border-radius: 50%;
   overflow: hidden;
-
-  position: relative;
-  z-index: 3;
 
   img {
     max-width: 100%;
@@ -156,6 +145,7 @@
     width: 30px;
     height: 20px;
     background: transparent;
+
     position: relative;
     z-index: 3;
 
@@ -168,7 +158,7 @@
       height: 1.6px;
       left: 0;
       background: #fff;
-      transition: all .2s ease-in;
+      transition: all 0.2s ease-in;
     }
 
     span {
@@ -213,7 +203,6 @@
 }
 
 .title-h2 {
-  font-size: 30px;
   @include respValue('font-size', 30, 20, 1);
   font-weight: 500;
   letter-spacing: 1px;

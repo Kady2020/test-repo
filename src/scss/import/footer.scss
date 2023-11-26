@@ -1,49 +1,58 @@
 .footer {
-  background: $purpleFls;
+  grid-area: footer;
   padding: 15px 0;
+  background: $purpleFls;
+  display: flex;
+  align-items: center;
 
   &__container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 15px;
-    min-height: 70px;
-
-    @media (max-width: 425.98px) {
-      flex-direction: column;
-      justify-content: center;
-    }
+    column-gap: 30px;
+    row-gap: 15px;
   }
 
-  &__copy {}
+  &__copy {
+    font-weight: 500;
+    letter-spacing: 1.5px;
+  }
 
   &__socials {
-    display: grid;
-    grid-auto-flow: column;
-    gap: 15px;
   }
+}
+.socials {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 15px;
 
-  &__icon-link {
+  &__icon {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    [name="logo-vk"],
-    [name="logo-tiktok"],
-    [name="logo-tiktok"],
-    [name="logo-github"] {
+    [name='logo-youtube'],
+    [name='logo-github'],
+    [name='logo-gitlab'],
+    [name='logo-instagram'] {
       font-size: 20px;
-      background: #333;
-      padding: 7.5px;
-      border-radius: 10px;
-      overflow: hidden;
-      color: #fff;
-      transition: all .2s ease-in;
+    }
 
-      &:hover {
-        background: $yelloColor;
-        color: #333;
-      }
+    [name='logo-youtube'] {
+      color: red;
+    }
+
+    [name='logo-github'] {
+      color: #111;
+    }
+
+    [name='logo-gitlab'] {
+      color: #ffa500;
+    }
+
+    [name='logo-instagram'] {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+      border-radius: 6px;
+      overflow: hidden;
     }
   }
 }

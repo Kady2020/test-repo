@@ -17,39 +17,29 @@ body {
 
 .wrapper {
   min-height: 100%;
-  display: flex;
-  flex-direction: column;
   overflow: clip;
+
+  display: grid;
+  grid-template:
+    [start] 'header' minmax(90px, auto) [row2]
+    [row2] 'main' 1fr [row3]
+    [row3] 'footer' minmax(70px, auto) [row-end] / 1fr;
 }
 
 .main {
-  flex: 1 1 auto;
-  padding: 150px 15px 0 15px;
+  grid-area: main;
+  padding: 90px 15px 0 15px;
 
-
-
-  &:not(:last-child) {
-    @include respValue('margin-bottom', 40, 20, 1);
-  }
-
-  @media (min-width: 846.98px) {
+  @media (min-width: 991.98px) {
     display: grid;
     grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1170px) 1fr;
   }
 
   @media (max-width: 991.98px) {
-    padding: 120px 15px 0 15px;
+    padding: 15px 15px 0 15px;
   }
 
-  &_secondpage {
-    grid-template: 1fr / 1fr;
-    padding: 0;
+  &:not(:last-child) {
+    @include respValue('margin-bottom', 40, 20, 1);
   }
-
-  // &__intro,
-  // &__video-gallery {
-  //   &:not(:last-child) {
-  //     margin: 0 0 60px 0;
-  //   }
-  // }
 }
